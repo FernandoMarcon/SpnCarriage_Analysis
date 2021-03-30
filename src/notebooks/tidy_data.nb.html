@@ -253,22 +253,6 @@ summary {
 <p><em>Functions</em></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NpZnlERUdzIDwtIGZ1bmN0aW9uKGRlX3Jlc3VsdCwgIyBERSBSZXN1bHQgVGFibGUgKGRhdGEuZnJhbWUpXG4gICAgICAgICAgICAgICAgICAgICAgICAgcFRocnMgPSAwLjAxLCBmY1RocnMgPSAwKSAjIFRocmVzaG9sZHNcbiAge1xuICB3aXRoKGRlX3Jlc3VsdCwgaWZlbHNlKHB2YWx1ZSA8IHBUaHJzICYgbG9nMkZvbGRDaGFuZ2UgPCAtZmNUaHJzLCBcIkRvd25cIixcbiAgICAgICAgICAgICAgICAgICAgICAgaWZlbHNlKHB2YWx1ZSA8IHBUaHJzICYgbG9nMkZvbGRDaGFuZ2UgPiBmY1RocnMsIFwiVXBcIixcIlVuY2hhbmdlZFwiKSkpXG59XG5wbG90Vm9sY2FubyA8LSBmdW5jdGlvbihkZV9yZXN1bHQpIHtcbiAgdGVtcCA9IGRlX3Jlc3VsdCAlPiUgbXV0YXRlKGxvZ3AgPSAtbG9nMTAocHZhbHVlKSwgc2NvcmUgPSBsb2dwKmFicyhsb2cyRm9sZENoYW5nZSkpXG4gIHBhbCA8LSBzZXROYW1lcyhjKFwiZGFya3JlZFwiLCBcImdyZXlcIiwgXCJkb2RnZXJibHVlXCIpLCBjKFwiVXBcIiwgXCJVbmNoYW5nZWRcIiwgJ0Rvd24nKSlcbiAgcGx0ID0gcGxvdF9seShkYXRhID0gdGVtcCwgeCA9IH5sb2cyRm9sZENoYW5nZSwgeSA9IH5sb2dwLFxuICAgICAgICAgICAgICAgIGNvbG9yID0gfkRFRywgY29sb3JzID0gcGFsLCBcbiAgICAgICAgICAgICAgICB0ZXh0ID0gcm93bmFtZXMoZGVfcmVzdWx0KSwgc2l6ZSA9IH5zY29yZSlcbiAgcGx0XG59XG5gYGAifQ== -->
-<pre class="r"><code>classifyDEGs &lt;- function(de_result, # DE Result Table (data.frame)
-                         pThrs = 0.01, fcThrs = 0) # Thresholds
-  {
-  with(de_result, ifelse(pvalue &lt; pThrs &amp; log2FoldChange &lt; -fcThrs, &quot;Down&quot;,
-                       ifelse(pvalue &lt; pThrs &amp; log2FoldChange &gt; fcThrs, &quot;Up&quot;,&quot;Unchanged&quot;)))
-}
-plotVolcano &lt;- function(de_result) {
-  temp = de_result %&gt;% mutate(logp = -log10(pvalue), score = logp*abs(log2FoldChange))
-  pal &lt;- setNames(c(&quot;darkred&quot;, &quot;grey&quot;, &quot;dodgerblue&quot;), c(&quot;Up&quot;, &quot;Unchanged&quot;, &#39;Down&#39;))
-  plt = plot_ly(data = temp, x = ~log2FoldChange, y = ~logp,
-                color = ~DEG, colors = pal, 
-                text = rownames(de_result), size = ~score)
-  plt
-}</code></pre>
-<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p><strong>AGES</strong></p>
