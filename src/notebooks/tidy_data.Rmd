@@ -50,18 +50,3 @@ de_result
 de_result$DEG <- classifyDEGs(de_result)
 plotVolcano(de_result)
 ```
-
-**MUCOSAL**
-
-```{r}
-count_fpath = "~/Documents/work/SpnCarriage_Analysis/data/raw_data/MUCOSAL/rnaseq/PILOT_rnaseq_data.tsv"
-meta_fpath = "~/Documents/work/SpnCarriage_Analysis/data/raw_data/MUCOSAL/rnaseq/PILOT_rnaseq_meta.tsv"
-```
-
-**LAIV1**
-
-```{r}
-
-```
-
-**LAIV2**
